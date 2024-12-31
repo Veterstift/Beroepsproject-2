@@ -9,15 +9,17 @@
 				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
 			</label>
 		</h2>
-		<div class="d-flex align-items-center">
-			<i class="fa fa-user" aria-hidden="true"></i>
-			<span><?php echo $_SESSION['username']; ?></span>
+		<div class="d-flex align-items-center main-profile-link">
+			<a href="profile.php">
+				<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+				<span>@<?php echo $_SESSION['username']; ?></span>
+			</a>
 		</div>
 	</header>
 	<div class="body">
 		<nav class="side-bar">
 			<div class="user-p">
-				<!--<h4>Admin: <?php //echo $_SESSION['username']; ?></h4>-->
+
 			</div>
 			<ul id="navList">
 				<li>

@@ -18,11 +18,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
         $key = "��a}�%k)�fӽ��g�?";
         include "inc/side-nav.php";
 		include_once("data/comment.php");
-        //include_once("data/post.php");
+        include_once("data/post.php");
 		include_once("../db_conn.php");
 		$comments = getAllComment($conn);
 		
-
+		$username = $_SESSION['username'];
     ?>
 
     <div class="main-table">
@@ -52,25 +52,22 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($comments as $comment) { 
-				//$category = getCategoryById($conn, $post['category']);	
-				?>
+				<?php foreach ($comments as $comment) { ?>
 				<tr>
 					<th scope="row"><?=$comment['comment_id'] ?></th>
 					<td>
-                        <a href="single_post.php?post_id=<?=$comment['post_id'] ?>">
-                        <?php
-                        //$p = getByIdDeep($conn, $comment['post_id']);
-                        //echo $p['post_title']; ?></a>
+						<a href="single_post.php?post_id=<?=$comment['post_id'] ?>"></a>
+						<?=$comment['post_id']?>
                     </td>
 					<td>
 						<?=$comment['comment']?>
 					</td>
-                    <td>
-                        <?php
-                        //$u = getUserById($conn, $comment['user_id']);
-                        //echo '@'.$u['username']; ?>
-                    </td>
+					<td>
+						<?=$comment['user_id']?>
+						<?php
+						$u = getUserByID($conn, $comment['user_id']);
+						echo '@'.$u['username']; ?>
+					</td>
 					<td>
 						<a href="comment-delete.php?comment_id=<?=$comment['comment_id'] ?>" class="btn btn-danger">Delete</a>
 					</td>

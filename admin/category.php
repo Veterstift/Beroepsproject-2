@@ -44,7 +44,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Category</th>
-					<th scope="col">Action</th>
+					<th scope="col" colspan="2">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,6 +55,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 					<td>
 						<a href="category-delete.php?id=<?=$category['id'] ?>" 
                         class="btn btn-danger">Delete</a>
+				</td>
+				<td>
                         <a href="category-edit.php?id=<?=$category['id'] ?>" 
                         class="btn btn-warning">Edit</a>
 					</td>

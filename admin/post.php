@@ -18,10 +18,9 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
         $key = "��a}�%k)�fӽ��g�?";
         include "inc/side-nav.php";
 		include_once("data/post.php");
+		include_once("data/comment.php");
 		include_once("../db_conn.php");
 		$posts = getAll($conn);
-		
-
     ?>
 
     <div class="main-table">
@@ -45,7 +44,10 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Title</th>
-					<th scope="col">Action</th>
+					<th scope="col">Category</th>
+					<th scope="col">Comments</th>
+					<th scope="col">Likes</th>
+					<th scope="col" colspan="2">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -58,8 +60,20 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 					<td>
 						<?=$category['category']?>
 					</td>
+					<td><i class="fa fa-comment" aria-hidden="true"></i>
+					<?php
+						echo CountByPostID($conn, $post['post_id']);
+					?>
+					</td>
+					<td><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+					<?php
+						echo likeCountByPostID($conn, $post['post_id']);
+					?>
+					</td>
 					<td>
 						<a href="post-delete.php?post_id=<?=$post['post_id'] ?>" class="btn btn-danger">Delete</a>
+					</td>
+					<td>
                         <a href="post-edit.php?post_id=<?=$post['post_id'] ?>" class="btn btn-warning">Edit</a>
 					</td>
 				</tr>

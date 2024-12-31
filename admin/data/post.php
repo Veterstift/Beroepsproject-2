@@ -28,6 +28,20 @@ function getById($conn, $id) {
     }
 }
 
+// getById Deep - Admin
+function getByIdDeep($conn, $id) {
+    $sql = "SELECT * FROM post WHERE post_id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+
+    if ($stmt->rowCount() >= 1) {
+        $data = $stmt->fetch();
+        return $data;
+    }else {
+        return 0;
+    }
+}
+
 // getCategoryById
 function getCategoryById($conn, $id) {
     $sql = "SELECT * FROM category WHERE id=?";
@@ -36,6 +50,19 @@ function getCategoryById($conn, $id) {
 
     if ($stmt->rowCount() >= 1) {
         $data = $stmt->fetch();
+        return $data;
+    } else {
+        return 0;
+    }
+}
+
+function getUserByID($conn, $id) {
+    $sql = "SELECT id, fname, username FROM users WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+
+    if ($stmt->rowCount() >= 1) {
+        $data = $stmt->fetchAll();
         return $data;
     } else {
         return 0;

@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<a href="index.php" class="link-secondary">< Back to Index</a>
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
     	<form class="shadow w-450 p-3" 
@@ -37,11 +38,10 @@
 		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Login</button>
+		  &nbsp;&nbsp;&nbsp;
 		  <a href="admin-login.php" class="link-secondary">Admin Login</a>
 		  &nbsp;&nbsp;&nbsp;
 		  <a href="signup.php" class="link-secondary">Signup</a>
-		  &nbsp;&nbsp;&nbsp;
-		  <a href="index.php" class="link-secondary">< Back to Index</a>
 		</form>
     </div>
 </body>
