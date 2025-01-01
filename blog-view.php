@@ -32,7 +32,7 @@ if (isset($_GET['post_id'])) {
     ?>
 
     <div class="container mt-5">
-    <a href="javascript:history.back()">< Terug</a>
+    <a href="javascript:history.back()" class="btn terug-btn">< Terug</a>
         <section class="d-flex">
 
             <main class="main-blog">
@@ -40,8 +40,13 @@ if (isset($_GET['post_id'])) {
                 <div class="card main-blog-card mb-5">
                     <img src="upload/blog/<?=$post['cover_url']?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?=$post['post_title']?></h5>
+                    <small class="text-body-secondary"><?= date('j F, Y', strtotime($post['crated_at'])) ?></small>
+                    <br>
+                        <h3 class="card-title"><?=$post['post_title']?></h3>
+                        <!-- <h5 class="card-author">Auteur: <?=$post['post_id']?></h5> -->
                         <p class="card-text"><?=$post['post_text']?></p>
+                        <br>
+                        
                     <hr>
                         <div class="d-flex justify-content-between">
                             <div class="react-btns">
@@ -77,7 +82,7 @@ if (isset($_GET['post_id'])) {
                                     echo CountByPostID($conn, $post['post_id']);
                                 ?> )
                             </div>
-                        <small class="text-body-secondary"><?=$post['crated_at']?></small>
+                        <small class="text-body-secondary">Auteur: <?=$post['post_id']?></small>
                     </div>
 
                     <form action="php/comment.php" 
@@ -147,7 +152,9 @@ if (isset($_GET['post_id'])) {
                 </div>
             </aside>
         </section>
+        <a href="javascript:history.back()" class="btn terug-btn">< Terug</a>
     </div>
+    
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

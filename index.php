@@ -39,7 +39,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                         <img src="upload/blog/<?= $post['cover_url'] ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h3 class="card-title"><?= $post['post_title'] ?></h3>
-                            <p class="card-date"><?= date('F j, Y', strtotime($post['crated_at'])) ?></p>
+                            <p class="card-date"><?= date('j F, Y', strtotime($post['crated_at'])) ?></p>
                         </div>
                     </a>
                 </article>
@@ -49,11 +49,11 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
     </section>
 
     <!-- INDEX PAGINA CONTENT -->
-    <section class="penci-section">
+    <section class="algemeen-section">
         <div class="container">
             <h3>
                 <span>
-                    <span>TEST</span>
+                    <span>Algemene Informatie</span>
                 </span>
             </h3>
         </div>
