@@ -72,10 +72,12 @@ $category = 0;
                             $p = strip_tags($post['post_text']);
                             $p = substr($p, 0, 200);
                         ?>
-                        <p class="card-text"><?=$p?>...</p>
-                        <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Read more</a>
+                        <p class="card-text"><?=$p?> ... </p>
+                        <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary lees-meer-btn">Lees meer</a>
                         <p class="card-text">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            <small class="text-body-secondary blog-post-author">Autheur: Admin</small>
+                            <br>
+                            <small class="text-body-secondary blog-post-update">Laatste update: 3 mins ago</small>
                         </p>
                         <hr>
                         <div class="d-flex justify-content-between">
@@ -123,10 +125,11 @@ $category = 0;
             <?php }else {?>
                 <main class="main-blog p-2">
                     <div class="alert alert-warning">
-                    No posts yet.
+                    Geen post beschikbaar.
                     </div>
                 </main>
             <?php } } ?>
+
             <aside class="aside-main">
                 <div class="list-group category-aside">
                     <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
@@ -139,6 +142,7 @@ $category = 0;
                     <?php } ?>
                 </div>
             </aside>
+
         </section>
         
     </div>

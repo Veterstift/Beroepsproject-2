@@ -1,0 +1,60 @@
+@font-face { font-family: WinterPrime; src: url('../font/WinterPrime.otf'); } 
+@font-face { font-family: WinterPrime; font-weight: bold; src: url('../font/WinterPrime.otf');}
+body {}
+.container {
+    max-width: 100vh;
+}
+.main-blog-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-blog-card:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.main-blog-card .card-body {
+    text-decoration: none;
+    text-align: center;
+    background-color: #0c65ad;
+    color: #fff;
+}
+.main-blog-card .card-body .card-title {
+    font-weight: 600;
+}
+.card-title {
+    padding: 10px;
+}
+.main-blog-card .card-body .card-date {
+    color: #78B9E8;
+    font-size: 1em;
+    font-weight: 500;
+}
+.index-page-card {
+    max-width: 300px;
+    max-height: 400px;
+    overflow: hidden;
+}
+.index-page-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* TESTS */
+.cards-post {
+    border-radius: 0px;
+    background-color: #0c65ad;
+    border-color: #2c50a3;
+}
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.posts-container {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-bottom: 1rem;
+}

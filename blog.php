@@ -7,6 +7,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 }
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 		include_once("admin/data/comment.php");
 		include_once("db_conn.php");
 		$posts = getAll($conn);
-        $categories = get5Categories($conn);
+        $categories = getAllCategories($conn);
     ?>
 
     <div class="container mt-5">
@@ -42,10 +43,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                             $p = strip_tags($post['post_text']);
                             $p = substr($p, 0, 200);
                         ?>
-                        <p class="card-text"><?=$p?>...</p>
-                        <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Read more</a>
+                        <p class="card-text"><?=$p?> ...</p>
+                        <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary lees-meer-btn">Lees meer</a>
                         <p class="card-text">
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            <small class="text-body-secondary blog-post-author">Autheur: Admin</small>
+                        <br>
+                            <small class="text-body-secondary blog-post-update">Laatste update: 3 mins ago</small>
                         </p>
                         <hr>
                         <div class="d-flex justify-content-between">

@@ -32,6 +32,7 @@ if (isset($_GET['post_id'])) {
     ?>
 
     <div class="container mt-5">
+    <a href="javascript:history.back()">< Terug</a>
         <section class="d-flex">
 
             <main class="main-blog">

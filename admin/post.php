@@ -24,8 +24,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     ?>
 
     <div class="main-table">
-		<h3 class="mb-3">All Posts 
-			<a href="post-add.php" class="btn btn-success">Add New</a></h3>
+		<h3 class="mb-3">Alle Posts 
+			<a href="post-add.php" class="btn btn-success">Toevoegen</a></h3>
 		<?php if (isset($_GET['error'])) { ?>
 		<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -43,8 +43,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Title</th>
-					<th scope="col">Category</th>
+					<th scope="col">Titel</th>
+					<th scope="col">Categorie</th>
 					<th scope="col">Comments</th>
 					<th scope="col">Likes</th>
 					<th scope="col" colspan="2">Action</th>
@@ -82,7 +82,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		</table>
 		<?php }else{ ?>
 			<div class="alert alert-warning">
-				Empty!
+				Leeg!
 			</div>
 		<?php } ?>
 	</div>

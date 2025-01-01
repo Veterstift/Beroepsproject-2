@@ -7,7 +7,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Create Post</title>
+	<title>Dashboard - Nieuwe Post</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -27,8 +27,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     ?>
 
     <div class="main-table">
-		<h3 class="mb-3">Create New Post
-			<a href="post.php" class="btn btn-secondary">Back</a></h3>
+		<h3 class="mb-3">Nieuwe Post 
+			<a href="post.php" class="btn btn-secondary">Terug</a></h3>
 		<?php if (isset($_GET['error'])) { ?>
 		<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -47,7 +47,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
               enctype="multipart/form-data">
 
 		  <div class="mb-3">
-		    <label class="form-label">Title</label>
+		    <label class="form-label">Titel</label>
 		    <input type="text" 
 		           class="form-control"
 		           name="title"
@@ -55,30 +55,35 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
                         htmlspecialchars($_GET['uname']):"" ?>">
 		  </div>
 
+		<div class="mb-3">
+			<label class="form-label">Autheur</label>
+			<input type="text" class="form-control" name="author" placeholder="<?php echo $_SESSION['username']; ?>">
+		</div>
+
 		  <div class="mb-3">
-		    <label class="form-label">Category</label>
+		    <label class="form-label">Categorie</label>
 		    <select name="category" class="form-control">
 				<?php foreach ($categories as $category) { ?>
-				<option value="?=$category['category']?>"><?=$category['category']?>></option>
+				<option value="?=$category['category']?>"><?=$category['category']?></option>
 				<?php } ?>
 			</select>
 		  </div>
 
           <div class="mb-3">
-		    <label class="form-label">Cover Image</label>
+		    <label class="form-label">Cover Afbeelding</label>
 		    <input type="file" 
 		           class="form-control"
 		           name="cover">
 		  </div>
 
           <div class="mb-3">
-		    <label class="form-label">Text</label>
+		    <label class="form-label">Tekst</label>
             <textarea 
 		        class="form-control text"
 		        name="text"></textarea>
 		  </div>
 
-		  <button type="submit" class="btn btn-primary">Create</button>
+		  <button type="submit" class="btn btn-primary">Aanmaken</button>
 		</form>
 	</div>
 	</section>

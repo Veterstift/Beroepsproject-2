@@ -37,7 +37,7 @@ if(isset($_POST['uname']) &&
                  $_SESSION['user_id'] = $id;
                  $_SESSION['username'] = $username;
 
-                 header("Location: ../blog.php");
+                 header("Location: ../index.php");
                  exit;
              }else {
                $em = "Incorect User name or password";
