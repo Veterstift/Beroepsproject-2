@@ -16,7 +16,7 @@ function getAll($conn) {
 
 // get all posts by category
 function getAllPostsByCategory($conn, $category_id) {
-    $sql = "SELECT * FROM post WHERE category=?";
+    $sql = "SELECT * FROM post WHERE category=? AND publish=1";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$category_id]);
 
@@ -31,7 +31,7 @@ function getAllPostsByCategory($conn, $category_id) {
 
 // getById
 function getById($conn, $id) {
-    $sql = "SELECT * FROM post WHERE post_id=?";
+    $sql = "SELECT * FROM post WHERE post_id=? AND publish=1";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$id]);
 
@@ -90,7 +90,7 @@ function getUserByID($conn, $id) {
     $stmt->execute([$id]);
 
     if ($stmt->rowCount() >= 1) {
-        $data = $stmt->fetchAll();
+        $data = $stmt->fetch();
         return $data;
     } else {
         return 0;

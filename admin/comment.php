@@ -22,7 +22,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		include_once("../db_conn.php");
 		$comments = getAllComment($conn);
 		
-		$username = $_SESSION['username'];
+		//$username = $_SESSION['username'];
     ?>
 
     <div class="main-table">
@@ -56,17 +56,19 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 				<tr>
 					<th scope="row"><?=$comment['comment_id'] ?></th>
 					<td>
-						<a href="single_post.php?post_id=<?=$comment['post_id'] ?>"></a>
-						<?=$comment['post_id']?>
+						<a href="single_post.php?post_id=<?=$comment['post_id'] ?>">
+						<?php
+						$p = getByIdDeep($conn, $comment['post_id']);
+						echo $p['post_title']; ?></a>
+						
                     </td>
 					<td>
 						<?=$comment['comment']?>
 					</td>
 					<td>
-						<?=$comment['user_id']?>
 						<?php
 						$u = getUserByID($conn, $comment['user_id']);
-						echo '@'.$u['username']; ?>
+						echo '@ '.$u['username']; ?>
 					</td>
 					<td>
 						<a href="comment-delete.php?comment_id=<?=$comment['comment_id'] ?>" class="btn btn-danger">Delete</a>
@@ -78,7 +80,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		</table>
 		<?php }else{ ?>
 			<div class="alert alert-warning">
-				Empty!
+				Leeg!
 			</div>
 		<?php } ?>
 	</div>

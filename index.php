@@ -50,12 +50,77 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 
     <!-- INDEX PAGINA CONTENT -->
     <section class="algemeen-section">
-        <div class="container">
-            <h3>
-                <span>
-                    <span>Algemene Informatie</span>
-                </span>
-            </h3>
+        <div class="container elementor-container">
+            <div class="elementor-links elementor-column elementor-col-12 elementor-top-column elementor-element-populated">
+                <div class="elementor-column-wrap elementor-element-populated">
+                    <div class="elementor-widget-wrap">
+                        <div class="elementor-widget-container">
+                            <section class="home-featured-cat">
+                                <div class="penci-border-arrow style-5 penci-homepage-title pcalign-left pcicon-right">
+                                    <h3 class="inner-arrow">
+                                        <span>
+                                            <span>ALGEMEEN</span>
+                                            
+                                        </span>
+                                    </h3>
+                                    
+                                </div>
+                                <div class="home-featured-cat-wrapper">
+                                    <p>
+                                    Rewilding Zuidoost houdt zich bezig met het beheer van de natuur en biodiversiteit in de omgeving Amsterdam Zuidoost.<br><br>
+                                    Lorem ipsum dolor sit amet. Non adipisci error in sunt error hic veniam neque. Vel sint odit sed quia dolores eos laboriosam quam est quia laborum sed sequi omnis. Eum mollitia velit eos autem dolor quo alias nihil vel dolores dolores qui voluptatem voluptate. Aut suscipit earum et maxime numquam et sunt inventore id omnis praesentium.
+                                    Et consequuntur voluptatibus eum debitis vitae est officia consequatur. Qui accusamus beatae 33 nemo quos sed dolor reprehenderit.
+                                    Sed galisum numquam eos galisum cumque ea illum corrupti non aliquid culpa ex reiciendis dolor est debitis enim. Et pariatur dicta ut dolores ratione et asperiores distinctio aut labore obcaecati sit recusandae esse. Qui neque iusto et voluptate internos eum voluptatibus similique sit voluptas saepe.
+                                    </p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="elementor-rechts penci-ercol-33 penci-sidebarSC elementor-column elementor-col-33 elementor-top-column elementor-element">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-widget elementor-widget-penci-sidebar">
+                        <div class="elementor-widget-container">
+                            <div id="sidebar" class="penci-sidebar-content penci-sidebar-content-vc pcicon-right">
+                                <div class="theiaStickySidebar">
+                                    <aside id="elementor-library-2" class="widget widget_elementor-library">
+                                        <!-- DIVS OVERGESLAGEN -->
+                                        <div class="elementor-widget-wrap">
+                                            <section class="penci-section penci-structure-10 elementor-section elementor-top-section elementor-element elementor-section-boxed">
+                                                <div class="elementor-widget-container">
+                                                    <div class="affiliate-links-widget">
+                                                        <h3 class="affiliate-widget-title">Externe Links</h3>
+                                                        <p class="affiliate-widget-description">Homebrews en andere projecten.</p>
+                                                        <br>
+                                                        <ul class="affiliate-widget-links">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-ravelry" aria-hidden="true"> Placeholder</i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-free-code-camp" aria-hidden="true"> Studeren</i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <i class="fa fa-archive" aria-hidden="true"> Archief</i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>

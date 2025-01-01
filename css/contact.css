@@ -2,8 +2,9 @@
 @font-face { font-family: WinterPrime; font-weight: bold; src: url('../font/WinterPrime.otf');}
 
 body {
-    
+    overflow-y: hidden;
 }
+
 h1 {
     font-family: WinterPrime;
 }
@@ -95,29 +96,7 @@ h1 {
         min-width: 100%;
     }
 }
-/*
-@media screen and (max-width: 1000px) {
-    .footer-column {
-        width: 50%;
-    }
-    .contact-form-container {
-        width: 100%;
-    }
-    .footer {
-        display: block;
-    }
-}
-@media screen and (max-width: 540px) {
-    .heading {
-        padding: 0px;
-    }
-    .tile-content {
-        padding: 0px 20px;
-    }
-    .footer-column {
-        width: 100%;
-    }
-}*/
+
 
 footer {
     background-color: bisque;
