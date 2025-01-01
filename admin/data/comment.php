@@ -44,8 +44,7 @@ function likeCountByPostID($conn, $id){
 
    return $stmt->rowCount();
 }
-
-//isliked
+// is liked by user
 function isLikedByUserID($conn, $post_id, $user_id){
    $sql = "SELECT * FROM post_like WHERE post_id=? AND liked_by=?";
    $stmt = $conn->prepare($sql);

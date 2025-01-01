@@ -14,6 +14,21 @@ function getAll($conn) {
     }
 }
 
+// get all posts by category
+function getAllPostsByCategory($conn, $category_id) {
+    $sql = "SELECT * FROM post WHERE category=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$category_id]);
+
+    if ($stmt->rowCount() >= 1) {
+        $data = $stmt->fetchAll();
+        return $data;
+    } else {
+        return 0;
+    }
+}
+
+
 // getById
 function getById($conn, $id) {
     $sql = "SELECT * FROM post WHERE post_id=?";
@@ -55,6 +70,19 @@ function getCategoryById($conn, $id) {
         return 0;
     }
 }
+// get 5 categories
+function get5Categories($conn) {
+    $sql = "SELECT * FROM category LIMIT 5";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+    if ($stmt->rowCount() >= 1) {
+        $data = $stmt->fetchAll();
+        return $data;
+    } else {
+        return 0;
+    }
+}
 
 function getUserByID($conn, $id) {
     $sql = "SELECT id, fname, username FROM users WHERE id=?";
@@ -71,7 +99,7 @@ function getUserByID($conn, $id) {
 
 // Get All Categories
 function getAllCategories($conn) {
-    $sql = "SELECT * FROM category";
+    $sql = "SELECT * FROM category ORDER BY category";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 

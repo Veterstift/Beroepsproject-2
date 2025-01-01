@@ -1,8 +1,10 @@
 <?php
 session_start();
 $logged = false;
-if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) 
+if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
     $logged = true;
+    $user_id = $_SESSION['user_id'];
+}
 
 if (isset($_GET['post_id'])) {
         include_once("admin/data/post.php");
@@ -11,7 +13,7 @@ if (isset($_GET['post_id'])) {
         $id = $_GET['post_id'];
 		$post = getById($conn, $id);
         $comments = getCommentsByPostID($conn, $id);
-
+        $categories = get5Categories($conn);
 
 ?>
 <!DOCTYPE html>
@@ -42,11 +44,31 @@ if (isset($_GET['post_id'])) {
                     <hr>
                         <div class="d-flex justify-content-between">
                             <div class="react-btns">
-                                <i class="fa fa-thumbs-up like" aria-hidden="true">
-                                </i> Likes (
-                                <?php
+                            <?php
+                                $post_id = $post['post_id'];
+                                if ($logged) {
+                                    $liked = isLikedByUserID($conn, $post_id, $user_id);
+                                
+                                if ($liked) {
+                                ?>
+                                <i class="fa fa-thumbs-up liked like-btn" 
+                                    post-id="<?=$post_id?>" 
+                                    liked="1" 
+                                    aria-hidden="true">
+                                </i>
+                                <?php }else { ?>
+                                    <i class="fa fa-thumbs-up like like-btn" 
+                                        post-id="<?=$post_id?>" 
+                                        liked="0" 
+                                        aria-hidden="true">
+                                    </i>
+                                <?php } }else { ?>
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <?php } ?>
+                                 Likes (
+                                <span><?php
                                     echo likeCountByPostID($conn, $post['post_id']);
-                                ?> )
+                                ?></span> )
 
                                 <i class="fa fa-comment" aria-hidden="true">
                                 </i> comments (
@@ -116,15 +138,41 @@ if (isset($_GET['post_id'])) {
                     <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
                         Category
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action">Category 1</a>
-                    <a href="#" class="list-group-item list-group-item-action">Category 2</a>
-                    <a href="#" class="list-group-item list-group-item-action">Category 3</a>
+                    <?php foreach ($categories as $category) { ?>
+                    <a href="category.php?category_id=<?=$category['id']?>" class="list-group-item list-group-item-action">
+                        <?php echo $category['category']; ?>
+                    </a>
+                    <?php } ?>
                 </div>
             </aside>
         </section>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".like-btn").click(function(){
+                var post_id = $(this).attr('post-id');
+                var liked = $(this).attr('liked');
+
+                if (liked == 1) {
+                    $(this).attr('liked', '0');
+                    $(this).removeClass('liked');
+                }else {
+                    $(this).attr('liked', '1');
+                    $(this).addClass('liked');
+                }
+                $(this).next().load("ajax/like-unlike.php",
+                {
+                    post_id: post_id
+                });
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 

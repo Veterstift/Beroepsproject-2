@@ -39,6 +39,9 @@
 .react-btns a:hover {
     opacity: .8;
 }
+.react-btns .liked {
+    color: #0088FF;
+}
 .react-btns .like:hover {
     color: #0088FF;
 }
