@@ -115,6 +115,39 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                                             </section>
                                         </div>
                                     </aside>
+
+                                    <aside id="elementor-library-2" class="widget widget_elementor-library">
+                                        <!-- DIVS OVERGESLAGEN -->
+                                        <div class="elementor-widget-wrap">
+                                            <section class="penci-section penci-structure-10 elementor-section elementor-top-section elementor-element elementor-section-boxed">
+                                                <div class="elementor-widget-container">
+                                                    <div class="affiliate-links-widget">
+                                                        
+                                                        <h3 class="affiliate-widget-title">Nieuwsbrief</h3>
+                                                        <p class="affiliate-widget-description">Meld je aan voor onze nieuwsbrief.</p>
+                                                        
+                                                        
+                                                        <form action="#">
+
+                                                        <div class="subscribe-container">
+                                                            <input type="text" placeholder="Naam" name="naam" required><br><br>
+                                                            <input type="email" placeholder="E-mail" name="email" required><br>
+                                                            <label>
+                                                                <input type="checkbox" checked="checked" name="subscribe"> Ik wil spam.
+                                                            </label>
+                                                        </div>
+                                                        <div class="subscribe-container">
+                                                            <input type="submit" value="Aanmelden">
+                                                        </div>
+                                                        
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </aside>
+
                                 </div>
                             </div>
                         </div>
@@ -124,6 +157,38 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
         </div>
     </section>
 </div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-column">
+                <h3 class="footer-heading">Heading one</h3>
+                <a href="#" class="footer-link">Link 1</a>
+                <a href="#" class="footer-link">Link 2</a>
+                <a href="#" class="footer-link">Link 3</a>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Heading one</h3>
+                <a href="#" class="footer-link">Link 1</a>
+                <a href="#" class="footer-link">Link 2</a>
+                <a href="#" class="footer-link">Link 3</a>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Heading one</h3>
+                <a href="#" class="footer-link">Link 1</a>
+                <a href="#" class="footer-link">Link 2</a>
+                <a href="#" class="footer-link">Link 3</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="copyright">&copy; 2025 Ernst Bobby en de rest.</span>
+            <a href="#" class="footer-social"><i class="fa fa-facebook-f"></i></a>
+            <a href="#" class="footer-social"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="footer-social"><i class="fa fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
